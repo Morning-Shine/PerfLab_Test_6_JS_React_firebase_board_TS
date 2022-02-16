@@ -1,0 +1,29 @@
+.Login {
+  width: 100vw;
+  height: 100vh;
+  background: url("../assets/img/background.jpg") no-repeat top left;
+  background-size: cover; }
+
+.login__btn {
+  background-color: #CAB4A7;
+  position: absolute;
+  height: 70px;
+  width: 330px;
+  top: calc(100vh/2 - 35px);
+  right: 8vw;
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10px; }
+
+.login__btn-img {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  max-height: 50px; }
+
+.login__btn-text {
+  grid-column-start: 2;
+  grid-column-end: 3; }

@@ -1,0 +1,38 @@
+@import url("../assets/variables.css");
+
+.btn {
+  background: linear-gradient(#ef9196, #dd4930 48%, #bd2414 52%, var(--color_1));
+  border-radius: var(--mainBorderRadius);
+  box-shadow: var(--btnShadow);
+  position: absolute;
+  height: 70px;
+  width: 350px;
+  top: calc(100vh / 2 - 35px);
+  right: 8vw;
+  bottom: 165px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:active {
+  bottom: 163px;
+  top: calc(100vh / 2 - 33px);
+  right: calc(8vw - 3px);
+  box-shadow: 0 0 0 60px rgba(0, 0, 0, 0.05) inset;
+  opacity: 0.9;
+}
+
+.img {
+  padding: 0 10px;
+  max-height: 50px;
+}
+
+.text {
+  width: 100%;
+  align-self: center;
+  font-size: 1.5em;
+  text-shadow: 0 -1px 1px #777;
+  font-weight: 500;
+}
