@@ -10,13 +10,12 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-
+import { IState } from "../models/State";
+import userSlice from "./userSlice";
 import loadingSlice from "./loadingSlice";
 import tableViewSlice from "./tableViewSlice";
 import themeSlice from "./themeSlice";
-import userSlice from "./userSlice";
 import firebaseDataLoadingSlice from "./firebaseDataLoadingSlice";
-
 
 
 const persistConfig = {
@@ -25,7 +24,7 @@ const persistConfig = {
   whitelist: ["user", "theme", "tableView"],
 };
 
-const rootReducer = combineReducers({
+const rootReducer = combineReducers<IState>({
   user: userSlice,
   loading: loadingSlice,
   theme: themeSlice,
@@ -37,7 +36,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -45,4 +44,6 @@ export const store = configureStore({
     }),
 });
 
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
 export const persistor = persistStore(store);

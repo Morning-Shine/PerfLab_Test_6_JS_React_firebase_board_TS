@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../hooks/redux";
 import { removeUser } from "../store/userSlice";
 
 
-export default function Logout({ visibleLogout }) {
-  const dispatch = useDispatch();
+type Props = {
+  visibleLogout: boolean;
+}
+
+export default function Logout({ visibleLogout }: Props) {
+  const dispatch = useAppDispatch();
+  // const dispatch = useDispatch();
   const logout=()=>{
       dispatch(removeUser());
   }
