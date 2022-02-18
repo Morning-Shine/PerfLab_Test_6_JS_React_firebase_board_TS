@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "@emotion/styled";
-import Divider from "@mui/material/Divider";
-import Avatar from "@mui/material/Avatar";
-import Logout from "./Logout";
+import React, { useState } from 'react';
+import styled from '@emotion/styled';
+import Divider from '@mui/material/Divider';
+import Avatar from '@mui/material/Avatar';
+import Logout from './Logout';
 
 export default function UserInfo({ user }) {
   const [visibleLogout, setVisibleLogout] = useState(true);
